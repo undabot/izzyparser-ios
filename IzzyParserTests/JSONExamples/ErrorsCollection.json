@@ -1,0 +1,16 @@
+{
+    "errors": [{
+                "id": "Error id 1",
+                "status": "Error status 1",
+                "code": "1",
+                "title": "Error title 1",
+                "detail": "Error detail 1"
+               },
+               {
+                "id": "Error id 2",
+                "status": "Error status 2",
+                "code": "2",
+                "title": "Error title 2",
+                "detail": "Error detail 2"
+               }]
+}

@@ -1,0 +1,17 @@
+{
+    "data": {
+        "type": "articles",
+        "id": "1",
+        "attributes": {
+            "title": "Rails is Omakase"
+        }
+    },
+    "links": {
+        "related": {
+            "href": "http://example.com/articles/",
+            "meta": {
+                "count": 10
+            }
+        }
+    }
+}

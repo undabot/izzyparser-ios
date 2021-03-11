@@ -1,0 +1,12 @@
+{
+    "data": {
+        "id": "id",
+        "type": "articles",
+        "attributes": {
+            "title": "Title",
+            "custom_attribute": {
+                "name": "Custom Attribute"
+            }
+        }
+    }
+}

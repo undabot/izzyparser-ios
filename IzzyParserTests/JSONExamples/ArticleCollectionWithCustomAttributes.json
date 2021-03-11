@@ -1,0 +1,51 @@
+{
+    "data": [
+             {
+                "type": "articles",
+                "id": "12",
+                "attributes": {
+                    "title": "This is the first title",
+                    "customAttribute": {
+                        "name": "Custom Attribute 1"
+                    }
+                }
+             },
+             {
+                "type": "articles",
+                "id": "13",
+                "attributes": {
+                    "title": "This is the second title",
+                    "customAttribute": {
+                        "name": "Custom Attribute 2"
+                    }
+                }
+             },
+             {
+                "type": "articles",
+                "id": "14",
+                "attributes": {
+                    "title": "This is the second title"
+                }
+             },
+             {
+                "type": "articles",
+                "id": "15",
+                "attributes": {
+                    "title": "This is the second title",
+                    "anotherCustomAttribute": {
+                        "anotherName": "Custom Attribute 4"
+                    }
+                }
+            },
+             {
+                 "type": "articles",
+                 "id": "16",
+                 "attributes": {
+                     "title": "This is the second title",
+                     "codableCustomAttribute": {
+                         "codableName": "Codable Name"
+                     }
+                 }
+             }
+        ]
+}

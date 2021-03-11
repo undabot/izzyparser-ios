@@ -1,0 +1,22 @@
+{
+    "errors": [
+        {
+            "id": "Error id 1",
+            "status": "Error status 1",
+            "code": "1",
+            "title": "Error title 1",
+            "detail": "Error detail 1",
+            "source": {
+                "pointer": "/data/attributes/title",
+                "parameter": "URIparam"
+            },
+            "links": {
+                "about": "http://example.com/articles/1"
+            }
+        }
+    ],
+    "data": {
+        "type": "articles",
+        "id": "1"
+    }
+}

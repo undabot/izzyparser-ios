@@ -1,0 +1,11 @@
+{
+    "data": {
+        "type": "reply",
+        "id": "1",
+        "relationships": {
+            "author": {
+                "data": { "type": "people", "id": "1" }
+            }
+        }
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "data": {
+        "type": "articles",
+        "id": "1",
+        "relationships": {
+            "author": {
+                "data": { "type": "people", "id": "9" }
+            }
+        }
+    },
+    "included": [
+        {
+            "type": "people",
+            "id": "9",
+            "attributes": {
+                "firstName": "Dan",
+                "lastName": "Gebhardt",
+                "twitter": "dgeb"
+            },
+            "meta": {
+                "resource": {
+                    "url": "https://www.google.com/test",
+                    "id": 43
+                }
+            }
+        }
+    ]
+}
