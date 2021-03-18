@@ -1,9 +1,14 @@
 import Foundation
 
 extension Data {
-
+    
     init(with filename: String, for object: AnyClass) throws {
+        #if SWIFT_PACKAGE
         let path = Bundle.module.url(forResource: filename, withExtension: "json")!
+        #else
+        let bundle = Bundle(for: object)
+        let path = bundle.url(forResource: filename, withExtension: "json")!
+        #endif
         self = try Data(contentsOf: path)
     }
 }
