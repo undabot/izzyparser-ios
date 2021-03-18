@@ -1,3 +1,5 @@
+import Foundation
+
 public protocol Deserializer {
     func registerResources(resourceMap: [String: Resource.Type])
     func deserialize<T: Resource>(_ data: Data) throws -> Document<T>

@@ -3,8 +3,7 @@ import Foundation
 extension Data {
 
     init(with filename: String, for object: AnyClass) throws {
-        let bundle = Bundle(for: object)
-        let path = bundle.url(forResource: filename, withExtension: "json")!
+        let path = Bundle.module.url(forResource: filename, withExtension: "json")!
         self = try Data(contentsOf: path)
     }
 }
