@@ -2,6 +2,15 @@
 
 IzzyParser is a library for serializing and deserializing [JSON API](http://jsonapi.org) objects.
 
+## Installation
+
+#### Swift Package Manager
+
+1. Using Xcode 11 or higher go to File > Swift Packages > Add Package Dependency
+2. Paste the project URL: https://github.com/undabot/izzyparser-ios.git
+3. Click on next, select the project target and click finish
+4. `Import IzzyParser`
+
 ## Usage
 
 #### Defining resource
