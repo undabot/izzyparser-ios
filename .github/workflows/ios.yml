@@ -27,7 +27,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gem-
       - name: Bundle Install
-        run: bundle install --deployment
+        run: bundle install
       - name: Cocoapods
         run: bundle exec pod install
       - name: Set Default Scheme
