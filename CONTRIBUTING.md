@@ -4,11 +4,11 @@ Please take the time to carefully read the following guide. These rules help mak
 
 ## General rules
 
-All contributions are handled via Pull Requests (PRs). Your PR _must_ target the `[develop](https://github.com/undabot/izzyparser-ios/tree/develop)` branch. Your PR is required to pass all tests and contain clear description.
+All contributions are handled via Pull Requests (PRs). Your PR _must_ target the [develop](https://github.com/undabot/izzyparser-ios/tree/develop) branch. Your PR is required to pass all tests and contain clear description.
 
 ## Reporting Issues
 
-A great way to contribute to the project is to send a detailed issue when you encounter a problem. We always appreciate a well-written, thorough bug report. If you find a match please leave a vote or additional comment to help us prioritize most common issues.
+A great way to contribute to the project is to send a detailed issue when you encounter a problem. We always appreciate a well-written, thorough bug report. Before creating new issue make sure to go through issue list and look for potential duplicate of your issue. If you find a match in issues list please leave a vote or additional comment to help us prioritize most common issues.
 
 Be sure to include in your issue:
 
