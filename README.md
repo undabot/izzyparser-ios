@@ -13,6 +13,10 @@ IzzyParser is a library for serializing and deserializing [JSON API](http://json
 3. Click on next, select the project target and click finish
 4. `Import IzzyParser`
 
+#### Cocoapods
+
+Coming soon...
+
 ## Usage
 
 #### Defining resource
