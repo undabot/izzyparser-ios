@@ -2,6 +2,8 @@
 
 IzzyParser is a library for serializing and deserializing [JSON API](http://jsonapi.org) objects.
 
+![Test](https://github.com/undabot/izzyparser-ios/actions/workflows/ios.yml/badge.svg)
+
 ## Installation
 
 #### Swift Package Manager
