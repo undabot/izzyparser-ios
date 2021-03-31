@@ -348,6 +348,6 @@ struct Price: Codable {
 ```
 
 ## License
-IzzyParser is released under the MIT license. ![See LICENSE](https://github.com/undabot/izzyparser-ios/blob/master/LICENSE.md) for details.
+IzzyParser is released under the MIT license. [See LICENSE](https://github.com/undabot/izzyparser-ios/blob/master/LICENSE.md) for details.
 
 
