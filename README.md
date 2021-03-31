@@ -3,6 +3,7 @@
 IzzyParser is a library for serializing and deserializing [JSON API](http://jsonapi.org) objects.
 
 ![Test](https://github.com/undabot/izzyparser-ios/actions/workflows/ios.yml/badge.svg)
+[![codecov](https://codecov.io/gh/undabot/izzyparser-ios/branch/master/graph/badge.svg?token=RSKJM6G86T)](https://codecov.io/gh/undabot/izzyparser-ios)
 ![Platform](https://img.shields.io/cocoapods/p/IzzyParser)
 ![Pod version](https://img.shields.io/cocoapods/v/IzzyParser)
 ![SPM](https://img.shields.io/badge/SPM-supported-orange)
