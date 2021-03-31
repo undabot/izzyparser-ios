@@ -3,6 +3,12 @@
 IzzyParser is a library for serializing and deserializing [JSON API](http://jsonapi.org) objects.
 
 ![Test](https://github.com/undabot/izzyparser-ios/actions/workflows/ios.yml/badge.svg)
+[![codecov](https://codecov.io/gh/undabot/izzyparser-ios/branch/master/graph/badge.svg?token=RSKJM6G86T)](https://codecov.io/gh/undabot/izzyparser-ios)
+![Platform](https://img.shields.io/cocoapods/p/IzzyParser)
+![Pod version](https://img.shields.io/cocoapods/v/IzzyParser)
+![SPM](https://img.shields.io/badge/SPM-supported-orange)
+![Top language](https://img.shields.io/github/languages/top/undabot/izzyparser-ios)
+![License](https://img.shields.io/github/license/undabot/izzyparser-ios)
 
 ## Installation
 
@@ -15,7 +21,21 @@ IzzyParser is a library for serializing and deserializing [JSON API](http://json
 
 #### Cocoapods
 
-Coming soon...
+[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects
+To integrate IzzyParser into your Xcode project using CocoaPods, specify it in your `Podfile`:
+
+```ruby
+target '<Your Target Name>' do
+    pod 'IzzyParser'
+end
+```
+
+Then, run the following command:
+
+```bash
+$ pod install
+```
+
 
 ## Usage
 
@@ -348,6 +368,6 @@ struct Price: Codable {
 ```
 
 ## License
-IzzyParser is released under the MIT license. ![See LICENSE](https://github.com/undabot/izzyparser-ios/blob/master/LICENSE.md) for details.
+IzzyParser is released under the MIT license. [See LICENSE](https://github.com/undabot/izzyparser-ios/blob/master/LICENSE.md) for details.
 
 
