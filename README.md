@@ -4,8 +4,11 @@ IzzyParser is a library for serializing and deserializing [JSON API](http://json
 
 ![Test](https://github.com/undabot/izzyparser-ios/actions/workflows/ios.yml/badge.svg)
 ![Platform](https://img.shields.io/cocoapods/p/IzzyParser)
-![Pod](https://img.shields.io/cocoapods/v/IzzyParser)
+![Pod version](https://img.shields.io/cocoapods/v/IzzyParser)
+![SPM](https://img.shields.io/badge/SPM-supported-orange)
 ![Top language](https://img.shields.io/github/languages/top/undabot/izzyparser-ios)
+![Small](https://img.shields.io/github/languages/code-size/undabot/izzyparser-ios)
+![License](https://img.shields.io/github/license/undabot/izzyparser-ios)
 
 ## Installation
 
@@ -18,7 +21,21 @@ IzzyParser is a library for serializing and deserializing [JSON API](http://json
 
 #### Cocoapods
 
-Coming soon...
+[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects
+To integrate IzzyParser into your Xcode project using CocoaPods, specify it in your `Podfile`:
+
+```ruby
+target '<Your Target Name>' do
+    pod 'IzzyParser'
+end
+```
+
+Then, run the following command:
+
+```bash
+$ pod install
+```
+
 
 ## Usage
 
