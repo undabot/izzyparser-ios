@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.description      = 'IzzyParser is a library for serializing and deserializing JSON:API objects'
   s.license          = { :type => 'MIT', :file => 'LICENSE.md' }
   s.author           = { 'Undabot' => 'ios@undabot.com' }
-  s.source           = { :git => 'git@github.com:undabot/izzyparser-ios.git', :tag => 'v1.0.0' }
+  s.source           = { :git => 'git@github.com:undabot/izzyparser-ios.git', :tag => '1.0.0' }
 
   s.ios.deployment_target = '9.0'
   s.swift_version = '5.0'
