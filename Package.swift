@@ -9,7 +9,7 @@ let package = Package(
     products: [
         .library(
             name: "IzzyParser",
-            targets: ["IzzyParser"]),
+            targets: ["IzzyParser"])
     ],
     dependencies: [
         .package(url: "https://github.com/Quick/Nimble.git", from: "9.0.0"),
@@ -28,6 +28,6 @@ let package = Package(
             path: "IzzyParserTests",
             exclude: ["Info.plist"],
             resources: [.process("JSONExamples")]
-        ),
+        )
     ]
 )

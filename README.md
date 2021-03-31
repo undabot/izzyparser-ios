@@ -2,6 +2,8 @@
 
 IzzyParser is a library for serializing and deserializing [JSON API](http://jsonapi.org) objects.
 
+![Test](https://github.com/undabot/izzyparser-ios/actions/workflows/ios.yml/badge.svg)
+
 ## Installation
 
 #### Swift Package Manager
@@ -10,6 +12,10 @@ IzzyParser is a library for serializing and deserializing [JSON API](http://json
 2. Paste the project URL: https://github.com/undabot/izzyparser-ios.git
 3. Click on next, select the project target and click finish
 4. `Import IzzyParser`
+
+#### Cocoapods
+
+Coming soon...
 
 ## Usage
 
@@ -340,3 +346,8 @@ struct Price: Codable {
     var type: String?
 }
 ```
+
+## License
+IzzyParser is released under the MIT license. ![See LICENSE](https://github.com/undabot/izzyparser-ios/blob/master/LICENSE.md) for details.
+
+
