@@ -136,7 +136,7 @@ izzy.registerResources(resources: resourceMap)
 
 Developers often forget to register resources to resource map. If resource is not registered, deserializer will return nil for missing object (it is wanted behaviour). But, you can turn on debug mode while developing, so Izzy will throw an error if resource is not registered. <b>Don't enable debug mode for production code because it will cause crashes</b>, it should be used only for debugging purpose - so that you can detect what resources are not registered.
 
-```
+```swift
 // Registering resources
 let izzy = Izzy()
 izzy.isDebugModeOn = true
