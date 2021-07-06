@@ -3,7 +3,7 @@ import Foundation
 public class Izzy {
     public var deserializer: Deserializer = IzzyDeserializer()
     public var serializer: Serializer = IzzySerializer()
-
+    
     public init() {}
     
     /**
@@ -54,13 +54,13 @@ public class Izzy {
     // MARK: - Serialization
     
     /**
-     Method for serializing single resource.
+     Method for serializing single resource. For internal usage only.
      
      - parameter resource: Resource object
      - returns: serialized resource dictionary
      
      */
-    public func serialize(resource: Resource) -> [String: Any] {
+    func serialize(resource: Resource) -> [String: Any] {
         return serializer.serialize(resource: resource)
     }
     
@@ -84,10 +84,10 @@ public class Izzy {
      - returns: dictionary with serialized resource
      
      */
-    public func serializeCustom(resource: Resource, attributeKey: String, attributeValue: Any) -> [String: Any] {
+    public func serializeCustom(resource: Resource, attributeKey: String, attributeValue: Any?) -> [String: Any] {
         return serializer.serialize(resource, attributeKey: attributeKey, attributeValue: attributeValue)
     }
-
+    
     /**
      Method for serializing single resource object with custom relationship dictionary.
      
