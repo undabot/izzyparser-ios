@@ -15,16 +15,18 @@ public class IzzyBuilder {
         relationships = dictionary?.relationships ?? [:]
     }
     
-    public func attribute(_ name: String, value: Any?) {
+    public func attribute(_ name: String, value: Any?) -> Self {
         if let value = value {
             attributes.updateValue(value, forKey: name)
         }
+        return self
     }
     
-    public func relationship(_ name: String, value: Any?) {
+    public func relationship(_ name: String, value: Any?) -> Self {
         if let value = value {
             relationships.updateValue(value, forKey: name)
         }
+        return self
     }
     
     public func serialize() -> [String: Any] {
