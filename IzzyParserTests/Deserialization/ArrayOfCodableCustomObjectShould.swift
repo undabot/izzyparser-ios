@@ -5,7 +5,7 @@ import Nimble
 
 // swiftlint:disable force_cast
 class ArrayOfCodableCustomObjectShould: QuickSpec {
-    override func spec() {
+    override class func spec() {
         var sut: ResourceDeserializer!
         
         beforeEach {
@@ -26,7 +26,7 @@ class ArrayOfCodableCustomObjectShould: QuickSpec {
             
             context("It has a typesForKeys override with the proper type") {
                 it("should store the inline JSON array into the object") {
-                    let data = try? Data(with: "CommentWithReplies", for: type(of: self))
+                    let data = try? Data(with: "CommentWithReplies", for: ArrayOfCodableCustomObjectShould.self)
                     let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any]
                     var comment: Comment?
                     
@@ -40,7 +40,7 @@ class ArrayOfCodableCustomObjectShould: QuickSpec {
             
             context("It's missing the typesForKeys override with the proper type") {
                 it("should fail to decode the array, throwing a runtime exception") {
-                    let data = try? Data(with: "CommentWithReplies", for: type(of: self))
+                    let data = try? Data(with: "CommentWithReplies", for: ArrayOfCodableCustomObjectShould.self)
                     let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any]
                     var comment: BrokenComment?
                     

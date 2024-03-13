@@ -7,7 +7,7 @@ import Nimble
 // swiftlint:disable type_body_length
 class IzzySerializerShould: QuickSpec {
     
-    override func spec() {
+    override class func spec() {
         var sut: IzzySerializer!
         
         beforeEach {

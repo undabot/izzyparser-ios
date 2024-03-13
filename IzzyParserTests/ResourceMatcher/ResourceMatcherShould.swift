@@ -5,7 +5,7 @@ import Nimble
 // swiftlint:disable function_body_length
 class ResourceMatcherShould: QuickSpec {
 
-    override func spec() {
+    override class func spec() {
         var sut: [Resource]!
         var author: Author!
         var comment: Comment!

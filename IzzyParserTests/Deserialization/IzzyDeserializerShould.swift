@@ -7,7 +7,7 @@ import Nimble
 // swiftlint:disable type_body_length
 class IzzyDeserializerShould: QuickSpec {
 
-    override func spec() {
+    override class func spec() {
         var sut: IzzyDeserializer!
 
         beforeEach {
@@ -29,7 +29,7 @@ class IzzyDeserializerShould: QuickSpec {
 
             context("and data is invalid") {
                 it("should throw invalidJSONFormat error") {
-                    let data = try? Data(with: "RandomData", for: type(of: self))
+                    let data = try? Data(with: "RandomData", for: IzzyDeserializerShould.self)
                     var document: Document<Resource>?
 
                     expect {
@@ -43,7 +43,7 @@ class IzzyDeserializerShould: QuickSpec {
 
             context("and data is null") {
                 it("should return nil") {
-                    let data = try? Data(with: "NullData", for: type(of: self))
+                    let data = try? Data(with: "NullData", for: IzzyDeserializerShould.self)
                     var document: Document<Resource>?
 
                     expect {
@@ -65,7 +65,7 @@ class IzzyDeserializerShould: QuickSpec {
 
             context("and json contains errors and data fields") {
                 it("should throw invalidJSONAPIResponse error") {
-                    let data = try? Data(with: "InvalidJson", for: type(of: self))
+                    let data = try? Data(with: "InvalidJson", for: IzzyDeserializerShould.self)
                     var document: Document<Resource>?
 
                     expect {
@@ -80,8 +80,8 @@ class IzzyDeserializerShould: QuickSpec {
             
             context("and json contains only errors field") {
                 it("should create document with error") {
-                    let data = try? Data(with: "ErrorsCollection", for: type(of: self))
-                    
+                    let data = try? Data(with: "ErrorsCollection", for: IzzyDeserializerShould.self)
+
                     let document: Document<[Resource]>? = try? sut.deserializeCollection(data!)
                     let errors = document?.errors
                     
@@ -93,7 +93,7 @@ class IzzyDeserializerShould: QuickSpec {
             
             context("and json contains only data field") {
                 it("should corectly deserialize and link resources") {
-                    let data = try? Data(with: "MultipleRelationships", for: type(of: self))
+                    let data = try? Data(with: "MultipleRelationships", for: IzzyDeserializerShould.self)
                     var document: Document<Article>?
                     
                     expect {
@@ -113,7 +113,7 @@ class IzzyDeserializerShould: QuickSpec {
                 
                 context("and author has top level links") {
                     it("should return document with links dictionary") {
-                        let data = try? Data(with: "ToOneRelationshipLink", for: type(of: self))
+                        let data = try? Data(with: "ToOneRelationshipLink", for: IzzyDeserializerShould.self)
                         var document: Document<Author>?
                         
                         expect {
@@ -128,7 +128,7 @@ class IzzyDeserializerShould: QuickSpec {
                     
                     context("and article has top level links and a relationship") {
                         it("should return document with links") {
-                            let data = try? Data(with: "ArticleWithLinksAndAuthorRelationships", for: type(of: self))
+                            let data = try? Data(with: "ArticleWithLinksAndAuthorRelationships", for: IzzyDeserializerShould.self)
                             var document: Document<Article>?
                             
                             expect {
@@ -143,7 +143,7 @@ class IzzyDeserializerShould: QuickSpec {
                     
                     context("and article has top level links") {
                         it("should return document with links") {
-                            let data = try? Data(with: "ArticleWithTopLevelSelfLinkObject", for: type(of: self))
+                            let data = try? Data(with: "ArticleWithTopLevelSelfLinkObject", for: IzzyDeserializerShould.self)
                             var document: Document<Article>?
                             
                             expect {
@@ -167,7 +167,7 @@ class IzzyDeserializerShould: QuickSpec {
             
             context("and article has author relationship with meta") {
                 it("should return article with author that contains meta") {
-                    let data = try? Data(with: "ArticleWithAuthorMeta", for: type(of: self))
+                    let data = try? Data(with: "ArticleWithAuthorMeta", for: IzzyDeserializerShould.self)
                     var document: Document<Article>?
                     
                     expect {
@@ -183,7 +183,7 @@ class IzzyDeserializerShould: QuickSpec {
 
             context("and response is empty (no content)") {
                 it("should return empty document") {
-                    let data = try? Data(with: "EmptyResponse", for: type(of: self))
+                    let data = try? Data(with: "EmptyResponse", for: IzzyDeserializerShould.self)
                     var document: Document<Resource>?
 
                     expect {
@@ -199,7 +199,7 @@ class IzzyDeserializerShould: QuickSpec {
 
             context("and data is invalid") {
                 it("should throw invalidJSONFormat error") {
-                    let data = try? Data(with: "RandomData", for: type(of: self))
+                    let data = try? Data(with: "RandomData", for: IzzyDeserializerShould.self)
                     var document: Document<[Resource]>?
 
                     expect {
@@ -213,7 +213,7 @@ class IzzyDeserializerShould: QuickSpec {
 
             context("data is empty") {
                 it("should return empty array") {
-                    let data = try? Data(with: "EmptyData", for: type(of: self))
+                    let data = try? Data(with: "EmptyData", for: IzzyDeserializerShould.self)
                     var document: Document<[Resource]>?
 
                     expect {
@@ -226,8 +226,8 @@ class IzzyDeserializerShould: QuickSpec {
             
             context("and json contains only errors field") {
                 it("should create document with error") {
-                    let data = try? Data(with: "ErrorsCollection", for: type(of: self))
-                    
+                    let data = try? Data(with: "ErrorsCollection", for: IzzyDeserializerShould.self)
+
                     let document: Document<[Resource]>? = try? sut.deserializeCollection(data!)
                     let errors = document?.errors
                     
@@ -239,7 +239,7 @@ class IzzyDeserializerShould: QuickSpec {
 
             context("and only one object is inside of a collection") {
                 it("should return comment object with id and type") {
-                    let data = try? Data(with: "OneObjectCollection", for: type(of: self))
+                    let data = try? Data(with: "OneObjectCollection", for: IzzyDeserializerShould.self)
                     var document: Document<[Resource]>?
 
                     expect {
@@ -252,7 +252,7 @@ class IzzyDeserializerShould: QuickSpec {
 
             context("and every comment in a collection has attributes") {
                 it("should return comments with attribute 'title'") {
-                    let data = try? Data(with: "CollectionOfArticlesWithAttributes", for: type(of: self))
+                    let data = try? Data(with: "CollectionOfArticlesWithAttributes", for: IzzyDeserializerShould.self)
                     var document: Document<[Comment]>?
 
                     expect {
@@ -271,7 +271,7 @@ class IzzyDeserializerShould: QuickSpec {
             
             context("and every article inside of a collection has custom attribute") {
                 it("should get custom attribute from json which can be custom deserialized") {
-                    let data = try? Data(with: "ArticleCollectionWithCustomAttributes", for: type(of: self))
+                    let data = try? Data(with: "ArticleCollectionWithCustomAttributes", for: IzzyDeserializerShould.self)
                     var document: Document<[Article]>?
                     
                     expect {
@@ -295,7 +295,7 @@ class IzzyDeserializerShould: QuickSpec {
             context("and json contains only data field") {
                 context("collection of tags has top level links") {
                     it("should return collection of tags with links") {
-                        let data = try? Data(with: "ToManyRelationshipsLink", for: type(of: self))
+                        let data = try? Data(with: "ToManyRelationshipsLink", for: IzzyDeserializerShould.self)
                         var document: Document<[Tag]>?
 
                         expect {
@@ -310,7 +310,7 @@ class IzzyDeserializerShould: QuickSpec {
                     
                     context("and collection of tags has top level pagination links") {
                         it("should return collection of tags with pagination links") {
-                            let data = try? Data(with: "ArticleWithPaginationLinks", for: type(of: self))
+                            let data = try? Data(with: "ArticleWithPaginationLinks", for: IzzyDeserializerShould.self)
                             var document: Document<[Article]>?
                             
                             expect {
@@ -331,7 +331,7 @@ class IzzyDeserializerShould: QuickSpec {
 
             context("and response is empty (no content)") {
                 it("should return empty document") {
-                    let data = try? Data(with: "EmptyResponse", for: type(of: self))
+                    let data = try? Data(with: "EmptyResponse", for: IzzyDeserializerShould.self)
                     var document: Document<[Resource]>?
 
                     expect {

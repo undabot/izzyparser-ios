@@ -5,7 +5,7 @@ import Nimble
 
 class MetaDeserializerShould: QuickSpec {
     
-    override func spec() {
+    override class func spec() {
         var sut: MetaDeserializer!
         
         beforeEach {
@@ -20,7 +20,7 @@ class MetaDeserializerShould: QuickSpec {
             
             context("and meta dictionary exists in json") {
                 it("should return meta dictionary from json") {
-                    let data = try? Data(with: "Meta", for: type(of: self))
+                    let data = try? Data(with: "Meta", for: MetaDeserializerShould.self)
                     let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any]
                     let meta = sut.deserializeMeta(from: json!)
                     
@@ -30,7 +30,7 @@ class MetaDeserializerShould: QuickSpec {
             
             context("and meta dictionary DOESN'T exist in json") {
                 it("should NOT return meta dictionary from json") {
-                    let data = try? Data(with: "JsonApi", for: type(of: self))
+                    let data = try? Data(with: "JsonApi", for: MetaDeserializerShould.self)
                     let json = (try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any])
                     let meta = sut.deserializeMeta(from: json!)
                     

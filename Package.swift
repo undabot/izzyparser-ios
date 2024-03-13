@@ -5,15 +5,15 @@ import PackageDescription
 
 let package = Package(
     name: "IzzyParser",
-    platforms: [.iOS(.v9), .macOS(.v10_15)],
+    platforms: [.iOS(.v14), .macOS(.v10_15)],
     products: [
         .library(
             name: "IzzyParser",
             targets: ["IzzyParser"])
     ],
     dependencies: [
-        .package(url: "https://github.com/Quick/Nimble.git", from: "9.0.0"),
-        .package(url: "https://github.com/Quick/Quick.git", from: "3.1.2")
+        .package(url: "https://github.com/Quick/Nimble.git", from: "13.0.0"),
+        .package(url: "https://github.com/Quick/Quick.git", from: "7.0.0")
     ],
     targets: [
         .target(
