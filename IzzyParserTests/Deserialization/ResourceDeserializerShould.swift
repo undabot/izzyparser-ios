@@ -7,7 +7,7 @@ import Nimble
 // swiftlint:disable force_cast
 class ResourceDeserializerShould: QuickSpec {
     
-    override func spec() {
+    override class func spec() {
         var sut: ResourceDeserializer!
         
         beforeEach {
@@ -26,7 +26,7 @@ class ResourceDeserializerShould: QuickSpec {
         
         describe("deserialize(from json: [String: Any]?)") {
             it("should return article object with id and type") {
-                let data = try? Data(with: "Base", for: type(of: self))
+                let data = try? Data(with: "Base", for: ResourceDeserializerShould.self)
                 let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any]
                 var article: Article?
                 
@@ -40,7 +40,7 @@ class ResourceDeserializerShould: QuickSpec {
             context("and resource is not registered in resourceMap") {
                 context("and debug mode is off") {
                     it("should not throw assertion") {
-                        let data = try? Data(with: "Base", for: type(of: self))
+                        let data = try? Data(with: "Base", for: ResourceDeserializerShould.self)
                         let json = ((try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any]) as [String : Any]??)
                         sut.resourceMap = nil
                         var article: Article?
@@ -54,7 +54,7 @@ class ResourceDeserializerShould: QuickSpec {
                 }
                 context("and debug mode is on") {
                     it("should throw an error") {
-                        let data = try? Data(with: "Base", for: type(of: self))
+                        let data = try? Data(with: "Base", for: ResourceDeserializerShould.self)
                         let json = ((try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any]) as [String : Any]??)
                         sut.resourceMap = nil
                         sut.isDebugModeOn = true
@@ -68,7 +68,7 @@ class ResourceDeserializerShould: QuickSpec {
             
             context("and attributes and relationships are null") {
                 it("should return resource object with id and type") {
-                    let data = try? Data(with: "NullAttributesAndRelationships", for: type(of: self))
+                    let data = try? Data(with: "NullAttributesAndRelationships", for: ResourceDeserializerShould.self)
                     let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any]
                     var article: Resource?
                     
@@ -82,7 +82,7 @@ class ResourceDeserializerShould: QuickSpec {
             
             context("and article has different attributes") {
                 it("should return article with properly filled attributes") {
-                    let data = try? Data(with: "AuthorWithDifferentAttributes", for: type(of: self))
+                    let data = try? Data(with: "AuthorWithDifferentAttributes", for: ResourceDeserializerShould.self)
                     let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any]
                     var author: Author?
                     
@@ -105,7 +105,7 @@ class ResourceDeserializerShould: QuickSpec {
             
             context("and article has author relationship") {
                 it("should return article with author's id and type") {
-                    let data = try? Data(with: "ArticleWithAuthorRelationship", for: type(of: self))
+                    let data = try? Data(with: "ArticleWithAuthorRelationship", for: ResourceDeserializerShould.self)
                     let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any]
                     var article: Article?
                     
@@ -119,7 +119,7 @@ class ResourceDeserializerShould: QuickSpec {
             
             context("and related article class is article's subclass") {
                 it("should return related article filled with attributes and relationships from article class") {
-                    let data = try? Data(with: "RelatedArticle", for: type(of: self))
+                    let data = try? Data(with: "RelatedArticle", for: ResourceDeserializerShould.self)
                     let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any]
                     var article: RelatedArticle?
                     
@@ -137,7 +137,7 @@ class ResourceDeserializerShould: QuickSpec {
             
             context("and reply has author relationship with custom key") {
                 it("should return reply with author's id and type") {
-                    let data = try? Data(with: "Reply", for: type(of: self))
+                    let data = try? Data(with: "Reply", for: ResourceDeserializerShould.self)
                     let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any]
                     var reply: Reply?
                     
@@ -151,7 +151,7 @@ class ResourceDeserializerShould: QuickSpec {
             
             context("and article has invalid author relationship") {
                 it("should return article where author is nil") {
-                    let data = try? Data(with: "ArticleWithInvalidRelationship", for: type(of: self))
+                    let data = try? Data(with: "ArticleWithInvalidRelationship", for: ResourceDeserializerShould.self)
                     let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any]
                     var article: Article?
                     
@@ -165,7 +165,7 @@ class ResourceDeserializerShould: QuickSpec {
             
             context("and article has tags relationship") {
                 it("should return article with array of tag with corresponding ids") {
-                    let data = try? Data(with: "ArticleWithTagCollectionRelationship", for: type(of: self))
+                    let data = try? Data(with: "ArticleWithTagCollectionRelationship", for: ResourceDeserializerShould.self)
                     let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any]
                     var article: Article?
                     
@@ -181,7 +181,7 @@ class ResourceDeserializerShould: QuickSpec {
             
             context("and article has custom attribute") {
                 it("should get custom attribute from json which can be custom deserialized") {
-                    let data = try? Data(with: "ArticleWithCustomAttribute", for: type(of: self))
+                    let data = try? Data(with: "ArticleWithCustomAttribute", for: ResourceDeserializerShould.self)
                     let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any]
                     var article: Article?
                     
@@ -196,7 +196,7 @@ class ResourceDeserializerShould: QuickSpec {
             
             context("article has author relationship with custom attribute") {
                 it("should return article FakeCustomAttribute and article.author with nil customAttribute, both for key 'customAttribute'") {
-                    let data = try? Data(with: "ArticleWithRelationshipWithCustomAttribute", for: type(of: self))
+                    let data = try? Data(with: "ArticleWithRelationshipWithCustomAttribute", for: ResourceDeserializerShould.self)
                     let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any]
                     var article: Article?
                     
@@ -217,7 +217,7 @@ class ResourceDeserializerShould: QuickSpec {
             context("and article has links") {
                 context("and has self link") {
                     it("should return article with self link") {
-                        let data = try? Data(with: "ArticleWithSelfLink", for: type(of: self))
+                        let data = try? Data(with: "ArticleWithSelfLink", for: ResourceDeserializerShould.self)
                         let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any]
                         var article: Article?
                         
@@ -231,7 +231,7 @@ class ResourceDeserializerShould: QuickSpec {
                 
                 context("and has related link") {
                     it("should return article with self link and related link") {
-                        let data = try? Data(with: "ArticleWithSelfAndRelatedLinks", for: type(of: self))
+                        let data = try? Data(with: "ArticleWithSelfAndRelatedLinks", for: ResourceDeserializerShould.self)
                         let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any]
                         var article: Article?
                         
@@ -246,7 +246,7 @@ class ResourceDeserializerShould: QuickSpec {
                 
                 context("and has relationship with self and related links") {
                     it("should return article with author which has self and related link") {
-                        let data = try? Data(with: "ArticleWithAttributesAndRelationships", for: type(of: self))
+                        let data = try? Data(with: "ArticleWithAttributesAndRelationships", for: ResourceDeserializerShould.self)
                         let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any]
                         var article: Article?
                         

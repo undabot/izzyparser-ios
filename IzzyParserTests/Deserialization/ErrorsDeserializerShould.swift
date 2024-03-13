@@ -5,7 +5,7 @@ import Nimble
 
 class ErrorsDeserializerShould: QuickSpec {
     
-    override func spec() {
+    override class func spec() {
         var sut: ErrorsDeserializer!
         
         beforeEach {
@@ -18,7 +18,7 @@ class ErrorsDeserializerShould: QuickSpec {
         
         describe("deserializeErrors(from json: [String: Any]?)") {
             it("should return JSONAPIError object") {
-                let data = try? Data(with: "ErrorsCollection", for: type(of: self))
+                let data = try? Data(with: "ErrorsCollection", for: ErrorsDeserializerShould.self)
                 let json = (try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any])
                 var jsonApiErrors: [JSONAPIError]?
                 
@@ -47,7 +47,7 @@ class ErrorsDeserializerShould: QuickSpec {
             
             context("error has links and source") {
                 it("should return JSONAPIError object with links and source") {
-                    let data = try? Data(with: "ErrorWithLinksAndSource", for: type(of: self))
+                    let data = try? Data(with: "ErrorWithLinksAndSource", for: ErrorsDeserializerShould.self)
                     let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any]
                     var jsonApiErrors: [JSONAPIError]?
                     
