@@ -6,7 +6,7 @@ import Nimble
 // swiftlint:disable function_body_length
 class IzzyShould: QuickSpec {
 
-    override func spec() {
+    override class func spec() {
         var izzyDeserializer: IzzyDeserializerMock!
         var izzySerializer: IzzySerializerMock!
         var sut: Izzy!
