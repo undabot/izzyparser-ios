@@ -265,6 +265,36 @@ Output:
  */
 ```
 
+#### Serializing objects with multiple optional non-objc properties
+
+```swift
+@objcMembers public final class SalaryDTO: Resource {
+    
+    public override class var type: String {
+        return "salary"
+    }
+
+    public var salary: Int?
+    public var salaryMin: Int?
+    public var salaryMax: Int?
+
+    public required init(id: String) {
+        super.init(id: id)
+    }
+    
+    public func serialized() -> [String : Any] {
+        return IzzyBuilder(resource: self)
+            .attribute("salary", value: salary)
+            .attribute("salaryMin", value: salaryMin)
+            .attribute("salaryMax", value: salaryMax)
+            .serialize()
+    }
+}
+
+// ...
+
+print(SalaryDTO(id: UUID().uuidString).serialized())
+```
 
 ### Deserializing
 
